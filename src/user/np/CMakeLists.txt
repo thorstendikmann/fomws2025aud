@@ -1,0 +1,2 @@
+add_executable(np_helloworld helloworld.c)
+td_add_all_subdirectories()
