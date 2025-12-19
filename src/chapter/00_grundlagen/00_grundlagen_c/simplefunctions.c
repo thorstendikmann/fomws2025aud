@@ -2,7 +2,6 @@
 
 void simplePrints(void)
 {
-	printf("\"String\": %s\n", "a string");
 	printf("Int: %i\n", 42);
 	printf("Float: %f\n", 33.33);
 }
@@ -265,17 +264,17 @@ void errorHandlingWithErrno(void)
 int main(void)
 {
 	simplePrints();
-	simpleVariables();
-	simpleArithmetic();
-	simpleBranch();
-	simpleSwitch();
-	simpleLoops(5);
+	// simpleVariables();
+	// simpleArithmetic();
+	// simpleBranch();
+	// simpleSwitch();
+	// simpleLoops(5);
 	sizeOfs();
-	c_fahrenheit();
-	bitwiseOperations();
-	gotoConsideredHarmful();
-	preprocessorMacros();
-	errorHandling();
-	errorHandlingWithErrno();
+	// c_fahrenheit();
+	// bitwiseOperations();
+	// gotoConsideredHarmful();
+	// preprocessorMacros();
+	// errorHandling();
+	// errorHandlingWithErrno();
 	return 0;
 }
