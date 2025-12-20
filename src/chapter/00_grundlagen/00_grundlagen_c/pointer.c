@@ -19,6 +19,7 @@ void simplePointer(void)
     printf("numPtr points to adress %p - value %d\n", (void*) numPtr, *numPtr);
 
     numPtr = &b;
+    b = 42; 
     printf("numPtr points to adress %p - value %d\n", (void*) numPtr, *numPtr);
 
     numPtr = &c;
@@ -197,14 +198,14 @@ void uebung_SpeicherverwaltungInC(void)
 
 int main(void)
 {
-    simplePointer();
-    simplePointerWithChar();
-    pointerUsage();
-    pointerArithmeticsMultiDim();
-    stringMagic();
-    // // Commented, otherwise valgrind would complain :)
-    //memoryLeaker();
-    uebung_SpeicherverwaltungInC();
+    // simplePointer();
+    // simplePointerWithChar();
+    // pointerUsage();
+    // pointerArithmeticsMultiDim();
+    // stringMagic();
+    // // // Commented, otherwise valgrind would complain :)
+    memoryLeaker();
+    // uebung_SpeicherverwaltungInC();
 
     return 0;
 }
