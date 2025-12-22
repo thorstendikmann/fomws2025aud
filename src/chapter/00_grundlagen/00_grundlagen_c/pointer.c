@@ -198,14 +198,14 @@ void uebung_SpeicherverwaltungInC(void)
 
 int main(void)
 {
-    // simplePointer();
-    // simplePointerWithChar();
-    // pointerUsage();
-    // pointerArithmeticsMultiDim();
-    // stringMagic();
+    simplePointer();
+    simplePointerWithChar();
+    pointerUsage();
+    pointerArithmeticsMultiDim();
+    stringMagic();
     // // // Commented, otherwise valgrind would complain :)
-    memoryLeaker();
-    // uebung_SpeicherverwaltungInC();
+    // memoryLeaker();
+    uebung_SpeicherverwaltungInC();
 
     return 0;
 }
