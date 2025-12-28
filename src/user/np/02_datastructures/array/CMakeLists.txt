@@ -1,0 +1,1 @@
+add_executable(array_np array.c array_test.c)

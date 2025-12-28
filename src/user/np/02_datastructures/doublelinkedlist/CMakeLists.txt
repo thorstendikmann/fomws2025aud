@@ -1,0 +1,1 @@
+add_executable(doublelinkedlist_np doublelinkedlist.c doublelinkedlist_test.c)

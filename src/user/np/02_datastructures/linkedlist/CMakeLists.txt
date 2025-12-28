@@ -1,0 +1,1 @@
+add_executable(linkedlist_np linkedlist.c linkedlist_test.c)
