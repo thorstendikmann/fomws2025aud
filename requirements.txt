@@ -1,1 +1,7 @@
 pandas
+numpy
+jupyter
+matplotlib
+networkx
+pyvis
+graphviz

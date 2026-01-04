@@ -107,6 +107,15 @@ class Graph:
 
             self.adjMatrix = newAdjMatrix
 
+    def deepCopy(self) -> Graph:
+        """
+        Returns:
+            Graph: A deep copy of this graph
+        """
+        G = Graph()
+        G.nodes = copy.deepcopy(self.nodes)
+        G.adjMatrix = copy.deepcopy(self.adjMatrix)
+
     def toNumpyArray(self) -> np.ndarray:
         """Transforms internal adjacency matrix to a numpy.array.
 
@@ -725,13 +734,13 @@ class Graph:
         """
         logger.debug(f"mst_Kruskal")
 
-        # Initialize minimal spanning tree (= graph without cycles) with copy of all nodes
+        # Initialize minimal spanning tree (= graph without cycles) with copy of all nodes, no edges
         resultMST = Graph()
         for node in self.get_nodes():
             resultMST.add_node(node)
 
         listOfEdges = self.get_edges(sortedReturn=True)
-        logger.debug(f"  listOfEdges: {listOfEdges}")
+        logger.info(f"  listOfEdges: {listOfEdges}")
 
         # Take "lowest cost" edge and add to MST
         for nodes, weight in listOfEdges.items():
@@ -739,11 +748,11 @@ class Graph:
             resultMST.add_edge(nodes[0]._getIndex(),
                                nodes[1]._getIndex(), weight)
 
-            # If we now added a cycle to the graph, remove this edge!!
+            # If we now added a cycle to the graph, remove this edge (= do not consider it)!!
             if (not resultMST.is_cycle_free(nodes[0]._getIndex())):
-                logger.debug(f"  Introduced cycle ... remove it again.")
-                resultMST.remove_edge(
-                    nodes[0]._getIndex(), nodes[1]._getIndex())
+                logger.debug(f"  Introduced cycle ... do not consider it.")
+                resultMST.remove_edge(nodes[0]._getIndex(),
+                                      nodes[1]._getIndex())
 
             logger.debug(
                 f"  Edges at end of iteration {resultMST.get_edges()}")
